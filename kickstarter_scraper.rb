@@ -7,6 +7,7 @@ require 'pry'
 #   images: project.css('div.project-thumbnail a img').attribute('src').value
 #   descriptions: project.css("p.bbcard_blurb").text
 #   location: project.css('ul.project-meta li a span.location-name').first.text
+#   percent: project.css("ul.project-stats li.first.funded strong").text.gsub("%", "").to_i
 def create_project_hash
   html = File.read('fixtures/kickstarter.html')
   kickstarter = Nokogiri::HTML(html)
